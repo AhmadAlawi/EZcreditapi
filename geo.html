@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Google Charts Tutorial</title>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["map"] });
+    </script>
+  </head>
+
+  <body>
+    <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+
+    <h2 style="color: green">GeeksforGeeks</h2>
+
+    <p><b> Displaying Latitude and Longitude</b></p>
+
+    <button onclick="getlocation()" style="width: 150px; height: 200px;">Click Me</button>
+    <p id="paraID"></p>
+
+    <p id="paraID1"></p>
+
+    <p id="log"></p>
+    <p id="pp"></p>
+    <script>
+      navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+         //result.status = "prompt" ;
+       document.getElementById("pp").append("result = ",result.state);
+         
+});
+      var variable1 = document.getElementById("paraID");
+      var variable2 = document.getElementById("paraID1");
+      var variable3 = document.getElementById("log");
+
+      // This function will get your current location
+      function getlocation() {
+        variable3.append(
+          "button clicked"
+        );
+        navigator.geolocation.getCurrentPosition(( (e)=>{
+          console.log("ee ",e);
+        }));
+        navigator.geolocation.watchPosition(showLoc);
+      }
+
+      // This function will show your current location
+      function showLoc(pos) {
+        variable3.append(
+          "new text " + pos.coords.latitude + " /  " + pos.coords.longitude
+        );
+        variable1.innerHTML = "Latitude: " + pos.coords.latitude;
+
+        variable2.innerHTML = "Longitude: " + pos.coords.longitude;
+      }
+    </script>
+    
+  </body>
+</html>

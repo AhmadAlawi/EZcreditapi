@@ -1,0 +1,82 @@
+<LatestSalary>1172</LatestSalary>
+<NumberOfLoans>2</NumberOfLoans>
+<TypeOfLoans>Housing Finance,Consumer Finance</TypeOfLoans>
+<totaloutstandingbalance>19985</totaloutstandingbalance>
+<TotalInstallmentAmount>305</TotalInstallmentAmount>
+<TotalCreditLimit>0</TotalCreditLimit>
+<CreditCardMonthlyInstallment>0</CreditCardMonthlyInstallment>
+<EntityScore>748</EntityScore>
+
+
+{
+  'soap:Envelope': {
+    '$': {
+      'xmlns:soap': 'http://www.w3.org/2003/05/soap-envelope',
+      'xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+      'xmlns:xsd': 'http://www.w3.org/2001/XMLSchema'
+    },
+    'soap:Body': [ [Object] ]
+  }
+}
+
+
+latest_salary,	num_loans,	type_loans,	total_balance,	total_installments,	total_credit_limit,	credit_monthly_installments
+
+enum_name	enum_value
+auth_status	blocked
+auth_status	active
+business_type	islamic
+business_type	commercial
+business_type	any
+currency	JOD
+currency	KWD
+currency	USD
+employment_status	retired
+employment_status	unemployed
+employment_status	employed
+gender	female
+gender	male
+loan_status	done
+loan_status	pending
+loan_type	other
+loan_type	personal
+loan_type	housing
+loan_type	auto
+notification_type	buy_request
+notification_type	offer
+notification_type	specific
+notification_type	generic
+offer_statuses	incompleted
+offer_statuses	completed
+offer_statuses	rejected
+offer_statuses	accepted
+offer_statuses	pending
+organization_type	financial_companies
+organization_type	banks
+organization_type	any
+user_type	bank_employee
+user_type	admin
+user_type	bank
+user_type	customer
+bank_type	islamic
+bank_type	commercial
+status	1
+status	0
+loan_request_status	expired
+loan_request_status	inactive
+loan_request_status	active
+login_method	twitter
+login_method	apple
+login_method	facebook
+login_method	google
+login_method	classic
+purchased_status	high
+purchased_status	medium
+purchased_status	low
+purchased_status	default
+private_offer_status	no_response
+private_offer_status	respond
+private_offer_status	granted
+private_offer_status	default
+
+'send_offer', 'buy_req' , 'change_ps' , 'note_purchased' , 'status_purchased' , 'note_accepted' , 'status_accepted' ,  'note_offer'

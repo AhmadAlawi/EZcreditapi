@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <soap:Body>
+        <GetConsumerDetailsResponse xmlns="http://tempuri.org/">
+            <GetConsumerDetailsResult>&lt;?xml version="1.0"?&gt;&lt;ArrayOfCinetresponsewithscore xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;cinetresponsewithscore&gt;&lt;LatestSalary&gt;1172&lt;/LatestSalary&gt;&lt;NumberOfLoans&gt;2&lt;/NumberOfLoans&gt;&lt;TypeOfLoans&gt;Housing Finance,Consumer Finance&lt;/TypeOfLoans&gt;&lt;totaloutstandingbalance&gt;19985&lt;/totaloutstandingbalance&gt;&lt;TotalInstallmentAmount&gt;305&lt;/TotalInstallmentAmount&gt;&lt;TotalCreditLimit&gt;0&lt;/TotalCreditLimit&gt;&lt;CreditCardMonthlyInstallment&gt;0&lt;/CreditCardMonthlyInstallment&gt;&lt;EntityScore&gt;748&lt;/EntityScore&gt;&lt;/cinetresponsewithscore&gt;&lt;/ArrayOfCinetresponsewithscore&gt;</GetConsumerDetailsResult>
+        </GetConsumerDetailsResponse>
+    </soap:Body>
+</soap:Envelope>

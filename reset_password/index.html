@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500&family=Glory:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+      body {
+        background: #fff;
+        font-family: "Fredoka";
+        margin: 0 auto;
+      }
+      @media screen and (max-width: 601px) {
+        body {
+          max-width: 700px;
+        }
+      }
+      @media screen and (min-width: 601px) {
+        body {
+          display: block;
+        }
+      }
+      #homeid .buttonDiv #text .con #form1 .form-style h1 {
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+        margin: auto;
+        padding: auto;
+        max-width: 95%;
+      }
+      .form-style input {
+        border: 1px solid #cccccc;
+        margin: auto;
+        height: 44px;
+        border-radius: 4px;
+        box-shadow: none;
+      }
+      .con {
+        margin-top: 3rem;
+        margin: auto;
+        padding: auto;
+      }
+      .title {
+        font-size: 21px;
+        line-height: 25px;
+        font-weight: 500;
+        color: #002046;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .form-style input::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #afafaf;
+      }
+      .button {
+        height: 36px;
+        background: #7f9746;
+        border-radius: 8px;
+        border: 1px solid #fff;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+        margin: auto;
+        width: 100%;
+      }
+      #text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+        margin: auto;
+      }
+      nav {
+        background-color: #002046;
+        height: 70px;
+        display: flex;
+        width: 100%;
+        justify-self: center;
+        margin-top: auto;
+        justify-items: center;
+        justify-self: center;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+      .logo {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 48px;
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: -0.09em;
+      }
+      .logoImg {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      @media screen and (max-width: 601px) {
+        .con {
+          max-width: 95%;
+        }
+      }
+      @media screen and (min-width: 601px) {
+        .con {
+          max-width: 55%;
+        }
+      }
+    </style>
+  </head>
+  <body onload="firstLoad()">
+    <nav>
+      <div class="logoImg">
+        <svg
+          width="60"
+          height="40"
+          viewBox="0 0 1 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M6.45152 3.00161V12.7507V13.8679C6.45152 14.1646 6.60432 14.4352 6.84201 14.5923L9.9659 16.5648C10.5177 16.9139 11.2222 16.5037 11.2222 15.8404V4.94793V1.0902V0.871998C11.2222 0.400691 10.8572 0.0253906 10.3988 0.0253906H6.46001H4.77073H0.823418C0.36502 0.0253906 0 0.400691 0 0.871998V10.2545V13.3267V15.3167V18.3889V39.1177C0 39.781 0.704574 40.1912 1.25635 39.8421L4.77073 37.6165L6.46001 36.5517L10.8402 33.7849C11.0864 33.6278 11.2307 33.3573 11.2307 33.0605V25.956C11.2307 25.6593 11.0779 25.3887 10.8402 25.2316L7.71636 23.2591C7.16458 22.91 6.46001 23.3202 6.46001 23.9835V33.4882C6.46001 33.9682 6.07801 34.361 5.61112 34.361C5.15273 34.361 4.77073 33.9682 4.77073 33.4882V21.4088V19.8552C4.77073 19.1919 5.4753 18.7817 6.02708 19.1308L6.46001 19.4013L9.97439 21.6182C10.5262 21.9673 11.2307 21.5571 11.2307 20.8938C11.2307 20.5971 11.0779 20.3265 10.8402 20.1694L6.46001 17.4027L4.77073 16.3378V15.6571V13.2656V12.742V3.01033C4.77073 2.5303 5.15273 2.14627 5.61112 2.14627C6.06952 2.13754 6.45152 2.52157 6.45152 3.00161Z"
+            fill="#C29D3E"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16.7141 13.9385L12.3338 16.7052C12.0877 16.8623 11.9434 17.1329 11.9434 17.4296V18.9483V22.0205V33.0875C11.9434 33.3842 12.0962 33.6548 12.3338 33.8119L16.7141 36.5787L18.3949 37.6435L21.9093 39.8691C22.461 40.2182 23.1656 39.808 23.1656 39.1447V16.4346C23.1656 15.7713 22.461 15.3611 21.9093 15.7102L18.7854 17.6827C18.5392 17.8398 18.3949 18.1104 18.3949 18.4072V33.4977C18.3949 33.969 18.0129 34.3618 17.5545 34.3618C17.0876 34.3618 16.7141 33.969 16.7141 33.4977V19.0007V16.3997C16.7141 16.103 16.8669 15.8324 17.1046 15.6753L18.3949 14.8549L22.7751 12.0882C23.0213 11.931 23.1656 11.6605 23.1656 11.3637V9.84508V6.77286V0.846607C23.1656 0.3753 22.8006 0 22.3422 0H18.4034H16.7226H12.7668C12.3084 0 11.9434 0.3753 11.9434 0.846607V1.05608V3.34279V12.3587C11.9434 13.022 12.6479 13.4322 13.1997 13.0831L16.3236 11.1106C16.5698 10.9535 16.7141 10.683 16.7141 10.3862V2.98494C16.7141 2.50491 17.0876 2.11215 17.5545 2.11215C18.0129 2.11215 18.3949 2.50491 18.3949 2.98494V9.80144V12.3936C18.3949 12.6904 18.2421 12.9609 18.0044 13.118L16.7141 13.9385Z"
+            fill="#EBD773"
+          />
+        </svg>
+      </div>
+      <p class="logo">CREDIT</p>
+    </nav>
+    <div class="con" id="homeid">
+      <div class="con">
+        <h3 class="title">Reset Password</h3>
+        <div class="form-style">
+          <form id="form1">
+            <div class="form-group pb-3">
+              <input
+                required
+                type="password"
+                placeholder="New Password"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="form-group pb-3">
+              <input
+                required
+                type="password"
+                placeholder="confirm password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+            </div>
+
+            <div class="buttonDiv">
+              <button type="submit" class="button" id="button">
+                <i class="fa fa-facebook" aria-hidden="true"></i> Submit Reset
+              </button>
+            </div>
+            <h5 id="message"></h5>
+          </form>
+          <div class="sideline"></div>
+
+          <div class="" id="text">Stay Happy and connected with EZ-Credit</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("form1").addEventListener("submit", formHandler);
+
+    function firstLoad() {
+      // document.getElementById("homeid").innerHTML = "<h2>changed</h2>";
+
+      console.log("now loading ");
+      console.log("data ", window.location.origin);
+    }
+    async function formHandler(event) {
+      event.preventDefault();
+      const ps1 = event.target[0].value;
+      const ps2 = event.target[1].value;
+      const fm = formValidation(ps1, ps2);
+      if (fm) {
+        updatePassword(ps1);
+      }
+    }
+    function formValidation(ps1, ps2) {
+      if (ps1 == ps2 && ps1 && ps2) {
+        if (ps1.length < 6) {
+          document.getElementById("message").style.color = "red";
+          document.getElementById("message").innerHTML =
+            "password must be more than 6 chars";
+          return false;
+        } else {
+          document.getElementById("message").style.color = "green";
+          document.getElementById("message").innerHTML = "Matching Password";
+          return true;
+        }
+      } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerHTML = "Not Matching Password";
+        return false;
+      }
+    }
+    function updatePassword(p1) {
+      var url = new URL(window.location.href);
+      var token = url.searchParams.get("token");
+      var id = url.searchParams.get("id");
+      const url_string = window.location.origin + "/api/auth/change_pass";
+      const loader = document.createElement("img");
+      loader.src =
+        "https://i.pinimg.com/originals/cc/a2/96/cca296d0d5e03431ce62168254982fbc.gif";
+      loader.style.width = "150px";
+      loader.style.height = "150px";
+
+      console.log(loader);
+      document.getElementById("homeid").innerHTML = "";
+      document.getElementById("homeid").appendChild(loader);
+
+      fetch(url_string, {
+        method: "POST",
+        body: JSON.stringify({
+          id: id,
+          token: token,
+          newps: p1,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            document.getElementById("homeid").innerHTML = "";
+
+            document.getElementById("homeid").innerHTML =
+              "<h1>PASSWORD CHANGED SUCCESSFULLY</h1>";
+
+            return response.json();
+          }
+          return Promise.reject(response);
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch(function (error) {
+          document.getElementById("homeid").innerHTML = "";
+
+          document.getElementById("homeid").innerHTML =
+            "<h1>ERROR HAPPEN TRY AGAIN LATER</h1>";
+          console.warn("Something went wrong.", error);
+        });
+    }
+  </script>
+</html>

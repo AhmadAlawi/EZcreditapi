@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        background: #cecece;
+      }
+      .form-style input {
+        border: 0;
+        height: 50px;
+        border-radius: 0;
+        border-bottom: 1px solid #ebebeb;
+      }
+      .form-style input:focus {
+        border-bottom: 1px solid #007bff;
+        box-shadow: none;
+        outline: 0;
+        background-color: #ebebeb;
+      }
+      .sideline {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #ccc;
+      }
+      button {
+        height: 50px;
+      }
+      .sideline:before,
+      .sideline:after {
+        content: "";
+        border-top: 1px solid #ebebeb;
+        margin: 0 20px 0 0;
+        flex: 1 0 20px;
+      }
+
+      .sideline:after {
+        margin: 0 0 0 0;
+      }
+    </style>
+  </head>
+  <body onload="firstLoad()">
+    <div class="container" id="homeid">
+      <div class="container">
+        <!-- <div class="col-md-6 d-none d-md-block">
+          <img
+            src="https://images.unsplash.com/photo-1566888596782-c7f41cc184c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80"
+            class="img-fluid"
+            style="min-height: 20%"
+          />
+        </div> -->
+        <div class="col-md-6 bg-white p-5">
+          <h3 class="pb-3">Reset Password</h3>
+          <div class="form-style">
+            <form id="form1">
+              <div class="form-group pb-3">
+                <input
+                  type="text"
+                  placeholder="New Password"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="form-group pb-3">
+                <input
+                  type="text"
+                  placeholder="confirm password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <!-- <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <input name="" type="checkbox" value="" />
+                  <span class="pl-2 font-weight-bold">Remember Me</span>
+                </div>
+                <div><a href="#">Forget Password?</a></div>
+              </div> -->
+              <!-- <div class="pb-2">
+                <button
+                  type="submit"
+                  class="btn btn-dark w-100 font-weight-bold mt-2"
+                >
+                  Submit
+                </button>
+              </div> -->
+              <div>
+                <button
+                  type="submit"
+                  class="btn btn-primary w-100 font-weight-bold mt-4"
+                >
+                  <i class="fa fa-facebook" aria-hidden="true"></i> Submit Reset
+                </button>
+              </div>
+              <h5 id="message"></h5>
+            </form>
+            <div class="sideline"></div>
+
+            <div class="pt-8 text-center">
+              Stay Happy and connected with EZ-Credit
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.getElementById("form1").addEventListener("submit", formHandler);
+
+    function firstLoad() {
+      // document.getElementById("homeid").innerHTML = "<h2>changed</h2>";
+
+      console.log("now loading ");
+      console.log("data ", window.location.origin);
+    }
+    async function formHandler(event) {
+      event.preventDefault();
+      const ps1 = event.target[0].value;
+      const ps2 = event.target[1].value;
+      const fm = formValidation(ps1, ps2);
+      if (fm) {
+        updatePassword(ps1);
+      }
+    }
+    function formValidation(ps1, ps2) {
+      if (ps1 == ps2 && ps1 && ps2) {
+        if (ps1.length < 6) {
+          document.getElementById("message").style.color = "red";
+          document.getElementById("message").innerHTML =
+            "password must be more than 6 chars";
+          return false;
+        } else {
+          document.getElementById("message").style.color = "green";
+          document.getElementById("message").innerHTML = "Matching Password";
+          return true;
+        }
+      } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerHTML = "Not Matching Password";
+        return false;
+      }
+    }
+    function updatePassword(p1) {
+      var url = new URL(window.location.href);
+      var token = url.searchParams.get("token");
+      var id = url.searchParams.get("id");
+      const url_string = window.location.origin + "/api/auth/change_pass";
+      const loader = document.createElement("img");
+      loader.src =
+        "https://i.pinimg.com/originals/cc/a2/96/cca296d0d5e03431ce62168254982fbc.gif";
+      loader.style.width = "150px";
+      loader.style.height = "150px";
+
+      console.log(loader);
+      document.getElementById("homeid").innerHTML = "";
+      document.getElementById("homeid").appendChild(loader);
+
+      fetch(url_string, {
+        method: "POST",
+        body: JSON.stringify({
+          id: id,
+          token: token,
+          newps: p1,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            document.getElementById("homeid").innerHTML = "";
+
+            document.getElementById("homeid").innerHTML =
+              "<h1>PASSWORD CHANGED SUCCESSFULLY</h1>";
+
+            return response.json();
+          }
+          return Promise.reject(response);
+        })
+        .then(function (data) {
+          console.log(data);
+        })
+        .catch(function (error) {
+          document.getElementById("homeid").innerHTML = "";
+
+          document.getElementById("homeid").innerHTML =
+            "<h1>ERROR HAPPEN TRY AGAIN LATER</h1>";
+          console.warn("Something went wrong.", error);
+        });
+    }
+  </script>
+</html>
